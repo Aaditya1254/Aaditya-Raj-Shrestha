@@ -1,40 +1,32 @@
-// Gallery Images
-
 const images = [
   {
-    src: "https://picsum.photos/id/1015/800/500",
-    alt: "River"
+    src: "images/waterfall.jpeg",
+    alt: "Waterfall"
   },
   {
-    src: "https://picsum.photos/id/1040/800/500",
+    src: "images/clouds.jpeg",
     alt: "Clouds"
   },
   {
-    src: "https://picsum.photos/id/1/800/500",
-    alt: "Playing Games"
+    src: "images/cherryblossom.jpeg",
+    alt: "Cherry Blossom"
   }
 ];
 
 let currentIndex = 0;
 
-// Elements
-
 const galleryImage = document.getElementById("galleryImage");
 const nextBtn = document.getElementById("nextBtn");
 const darkModeBtn = document.getElementById("darkModeBtn");
 
-// Next Photo
-
-nextBtn.addEventListener("click", function () {
+nextBtn.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % images.length;
 
   galleryImage.src = images[currentIndex].src;
   galleryImage.alt = images[currentIndex].alt;
 });
 
-// Dark Mode
-
-darkModeBtn.addEventListener("click", function () {
+darkModeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 
   if (document.body.classList.contains("dark-mode")) {
